@@ -4,5 +4,10 @@ using std::endl;
 
 int main()
 {
-	cout << "Hello, world!" << endl; 
+	for (int i = 0; i < 5;)
+	{
+		cout << "Hello, world!" << endl;
+		i = i + 1; 
+	}
+	return 0; 
 }
