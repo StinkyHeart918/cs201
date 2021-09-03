@@ -11,16 +11,27 @@ using std::endl;
 
 int main()
 {
-	int i = 1, j = 1;
+	int i = 1, j = 1, k = 2;
 	while (i <= 10)
 	{
 		while (j <= 60)
 		{
-			cout << "!";
-			++j;
+			if(k % 2 == 0)
+			{
+				cout << "!";
+				++k;
+				++j;
+			}
+			else
+			{
+				cout << "?";
+				++k;
+				++j;
+			}
 		}
 		cout << endl; 
-		j = 1; 
+		j = 1;
+		++k;
 		++i; 
 	}
 	return 0; 
