@@ -12,5 +12,22 @@ using std::endl;
 
 int main()
 {
-
+	int i = 0, length; 
+	cout << "Please enter the number for the size of diamond you would like to be made: ";
+	cin >> length; 
+	if (length > 0)
+	{
+		while(i < length)
+		{
+			cout << "#";
+			i++; 
+		}
+		cout << endl; 
+		return length; 
+	}
+	else
+	{
+		cout << "Sorry, that is not a valid entry." << endl; 
+		return 0; 
+	}
 }
