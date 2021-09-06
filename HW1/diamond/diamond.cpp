@@ -12,20 +12,33 @@ using std::endl;
 
 int main()
 {
-	int i = 0, length; 
+	int i = 0; int j = 1; int counter; int length;
 	cout << "Please enter the number for the size of diamond you would like to be made: ";
 	cin >> length; 
 	if (length > 0)
 	{
-		while(i < length)
+		counter = 1; 
+		while (i < length)
 		{
-			cout << "#";
-			i++; 
+			while (j < length)
+			{
+				cout << " ";
+				j++;
+			}
+			while (counter > 0)
+			{
+				cout << "#";
+				counter--;
+			}
+			
+			cout << endl;
+			i++;
+			counter = i + 1;
+			j = i + 1; 
 		}
-		cout << endl; 
 		return length; 
 	}
-	else
+	else //In case someone enters an invalid character or number. 
 	{
 		cout << "Sorry, that is not a valid entry." << endl; 
 		return 0; 
