@@ -19,17 +19,17 @@ int main()
 	{
 		while (i < length) //This while loop makes the top half of the diamond successfully
 		{
-			while (j < length)
+			while (j < length) //spaces before hashmarks
 			{
 				cout << " ";
 				j++;
 			}
-			while (counterfront > 0)
+			while (counterfront > 0) //hashmarks up to the vertical middle of the diamond
 			{
 				cout << "#";
 				counterfront--;
 			}
-			while (counterback > 0)
+			while (counterback > 0) //hashmarks after the vertical middle of the diamond
 			{
 				cout << "#";
 				counterback--;
@@ -40,11 +40,11 @@ int main()
 			counterback = i; 
 			j = i + 1; 
 		}
-		i = length - 2; 
+		i = length - 2; //resets variables and prepares for part two: the lower half of the diamond
 		j = length - 1; 
 		counterfront = i + 1; 
 		counterback = i; 
-		while (i > 0)
+		while (i >= 0) //has to be >= or else we miss the bottom tip of the diamond
 		{
 			while (j < length)
 			{
