@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\HW1",
+    "\\HW1\\diamond",
+    "\\labs\\Lb03p2"
   ],
-  "SelectedNode": "\\poem.sln",
+  "SelectedNode": "\\HW1",
   "PreviewInSolutionExplorer": false
 }
