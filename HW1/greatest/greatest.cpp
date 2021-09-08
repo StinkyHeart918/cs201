@@ -12,7 +12,7 @@ using std::endl;
 
 int main()
 {
-	int temp = 1; int great = 1;
+	int temp = 1; int great = 0;
 	cout << "Please enter a sequence of positive integers, ending the sequence with a 0. This program will print out the greatest integer entered." << endl; 
 	while (temp > 0)
 	{
@@ -20,12 +20,23 @@ int main()
 		cin >> temp;
 		if (temp >= 0)
 		{
-			continue;
+			if (temp > great)
+			{
+				great = temp; 
+			}
 		}
 		else
 		{
+			cout << "That is not a valid entry. " << endl;
 			break; 
 		}
 	}
+	if (great == 0)
+	{
+		cout << "No positive integers entered" << endl;
+		return 1;
+	}
+	cout << "Your greatest integer in the sequence was " << great << endl; 
+	return 2; 
 	
 }
