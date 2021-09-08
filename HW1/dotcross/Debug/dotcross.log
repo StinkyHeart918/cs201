@@ -1,2 +1,3 @@
 ﻿  dotcross.cpp
+C:\github\cs201\HW1\dotcross\dotcross.cpp(16,7): warning C4834: discarding return value of function with 'nodiscard' attribute
   dotcross.vcxproj -> C:\github\cs201\HW1\dotcross\Debug\dotcross.exe
