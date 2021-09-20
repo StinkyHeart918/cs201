@@ -1,3 +1,2 @@
 ﻿  names.cpp
-C:\github\cs201\HW2\names\names\names.cpp(22,7): warning C4834: discarding return value of function with 'nodiscard' attribute
   names.vcxproj -> C:\github\cs201\HW2\names\names\Debug\names.exe
