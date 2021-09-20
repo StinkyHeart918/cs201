@@ -17,34 +17,33 @@ using std::vector;
 using std::string; 
 using std::getline;
 
-int main()
+void InputNames(vector<string> & names)
 {
-	vector<string> names; 
 	for (int i = 0; i < 10; i++) //accepts names from the user
 	{
-		string name; 
+		string name;
 		cout << "Please enter a name." << endl;
 		getline(cin, name);
 		names.push_back(name);
 	}
-	for (string name : names) //print, in order of entering, the names entered
-	{
-		std::cout << name << ", ";
-	}
 }
-
-//void InputNames(vector<string>& names)
-//{
-
-//}
 
 //bool DoesNameExist(const string& nameToFind, const vector<string>& names)
 //{
 
 //}
 
-//void PrintNames(const vector<string> & names)
-//{
+void PrintNames(const vector<string> & names)
+{
+	for (string name : names) //print, in order of entering, the names entered
+	{
+		std::cout << name << ", ";
+	}
+}
 
-//}
-
+int main()
+{
+	vector<string> names;
+	InputNames(names);
+	PrintNames(names);
+}
