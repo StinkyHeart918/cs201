@@ -48,5 +48,16 @@ int main()
 		cout << "The number of rice on tile " << tile << " is " << rice << " and in total there are " << total << endl;
 	}
 	cout << "You need " << tile << " tiles to get more than 1000000000 grains of rice" << endl;
+	while (i < 64) //Prints the whole value of the 64 tiles worth of rice, per tile and total. 
+	{
+		cout << "The number of rice on tile " << til << " is " << ric << " and in total there are " << tot << endl;
+		til++; 
+		ric = ric * 2; 
+		tot = tot + ric;
+		i++;
+	} 
+	cout << "Using an int will overflow values after tile 31, where values will become negative then become one. ";
+	cout << "Using a double will work to find all values through to the 64th tile of the board, giving a value of 1.84*10^19 ";
+		cout << "grains of rice total.";
 	return 0;
 }
