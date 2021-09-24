@@ -4,12 +4,13 @@
 
 using std::string; 
 
-int modifyString(std::string& referencedString, int n)
+int modifyString(string& referencedString, int n)
 {
 	int length = 0; 
-	string addition = "Hi";  string referenceString = "Hello";
-	addition = std::to_string(n % 10);
-	referenceString.append(addition);
-	length = size(referenceString);
+	int hold = n % 10; 
+	string addition = "Hi"; 
+	addition = std::to_string(hold);
+	referencedString.append(addition);
+	length = sizeof(referencedString);
 	return length; 
 }

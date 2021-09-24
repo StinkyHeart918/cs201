@@ -17,6 +17,6 @@ using std::string;
 int main()
 {
 	string stringInMain = "Hello";
-	cout << "length: " << modifyString(stringInMain, 0) << std::endl;
-	cout << "stringInMain: " << stringInMain << std::endl;
+	cout << "length: " << modifyString(stringInMain, 0) << endl;
+	cout << "stringInMain: " << stringInMain << endl;
 }
