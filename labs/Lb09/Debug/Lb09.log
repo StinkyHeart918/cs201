@@ -1,0 +1,16 @@
+﻿  Lab09_main.cpp
+C:\github\cs201\labs\Lb09\modifyString.hpp(11,23): error C2039: 'string': is not a member of 'std'
+C:\github\cs201\labs\Lb09\predefined C++ types (compiler internal)(340): message : see declaration of 'std'
+C:\github\cs201\labs\Lb09\modifyString.hpp(11,30): error C2065: 'string': undeclared identifier
+C:\github\cs201\labs\Lb09\modifyString.hpp(11,32): error C2065: 'referencedString': undeclared identifier
+C:\github\cs201\labs\Lb09\modifyString.hpp(11,50): error C2062: type 'int' unexpected
+C:\github\cs201\labs\Lb09\Lab09_main.cpp(20,24): error C2064: term does not evaluate to a function taking 2 arguments
+  modifyString.cpp
+C:\github\cs201\labs\Lb09\modifyString.hpp(11,23): error C2039: 'string': is not a member of 'std'
+C:\github\cs201\labs\Lb09\predefined C++ types (compiler internal)(340): message : see declaration of 'std'
+C:\github\cs201\labs\Lb09\modifyString.hpp(11,30): error C2065: 'string': undeclared identifier
+C:\github\cs201\labs\Lb09\modifyString.hpp(11,32): error C2065: 'referencedString': undeclared identifier
+C:\github\cs201\labs\Lb09\modifyString.hpp(11,50): error C2062: type 'int' unexpected
+C:\github\cs201\labs\Lb09\modifyString.cpp(7,5): error C2365: 'modifyString': redefinition; previous definition was 'data variable'
+C:\github\cs201\labs\Lb09\modifyString.hpp(11): message : see declaration of 'modifyString'
+  Generating Code...
