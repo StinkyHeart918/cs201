@@ -14,10 +14,9 @@ using std::endl;
 using std::cin;
 using std::string;
 
-int inputInfo()
+//Takes a valid input from user
+int inputInfo(int size, std::string& phrase) 
 {
-	string phrase; //Takes a valid input from user
-	int size;
 	cout << "Please enter a string: ";
 	cin >> phrase;
 	if (phrase == "num")

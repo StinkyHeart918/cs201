@@ -1,5 +1,2 @@
-﻿  boxer.cpp
-  boxerprint.cpp
-  Generating Code...
-C:\github\cs201\HW3\boxer\boxer.cpp(34): warning C4715: 'inputInfo': not all control paths return a value
+﻿  boxerprint.cpp
   boxer.vcxproj -> C:\github\cs201\HW3\boxer\Debug\boxer.exe

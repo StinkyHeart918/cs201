@@ -17,6 +17,6 @@ Hold functions for boxerprint.cpp
 //   int favnum = getInt();
 //
 
-int inputInfo();
+int inputInfo(int size, std::string& phrase);
 #endif 
 #pragma once
