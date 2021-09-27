@@ -6,22 +6,10 @@ Runs through all numbers 1-40 and checks if they are divisible by 3
 */
 
 #include <iostream>
+#include "isDiv3.hpp"
 
 using std::cout;
 using std::endl;
-
-//Takes an integer and tests if it is divisible by 3, returns true if it is, false otherwise
-bool isDiv3(int test) 
-{
-	if (test % 3 == 0)
-	{
-		return true;
-	}
-	else
-	{
-		return false; 
-	}
-}
 
 //main describes what is being done by this program to user and goes through numbers 1-40 
 //putting them through function isDiv3
