@@ -18,5 +18,8 @@ Hold functions for boxerprint.cpp
 //
 
 int inputInfo(int size, std::string& phrase);
+
+
+void box(int size, std::string& phrase);
 #endif 
 #pragma once
