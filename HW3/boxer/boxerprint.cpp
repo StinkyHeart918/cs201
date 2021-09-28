@@ -14,20 +14,6 @@ using std::endl;
 using std::cin; 
 using std::string; 
 
-/*void box(int size, string phrase)
-{
-	int side = sizeof(phrase);
-	int gap = side + 2; 
-	side = side + 2 * size; 
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < side; j++)
-		{
-			cout << "*";
-		}
-	}
-}*/
-
 int main()
 {
 	string phrase; 
