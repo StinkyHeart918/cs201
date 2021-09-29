@@ -18,7 +18,7 @@ int main()
 	cout << "I shall list numbers divisible by 3, checking the numbers from 1 to 40" << endl;;
 	for (int i = 1; i < 41; i++)
 	{
-		if (isDiv3(i) == true)
+		if (isDiv3(i)) //Can use !isDiv3 to say is not div 3, ie what is false for this bool? 
 		{
 			cout << "The number " << i << " is divisible by 3." << endl;
 		}
