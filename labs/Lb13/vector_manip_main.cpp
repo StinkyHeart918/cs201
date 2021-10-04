@@ -19,11 +19,11 @@ int main() {
 	std::cout << "-------------------Required--------------------------"
 		<< std::endl;
 	//TODO Declare a vector of strings named "words"
-	vector<string> str;
-	generate(str);
-		//TODO REQUIRED Print original words with a range-based for loop.
-		//     Access each string by-reference and make it constant.
-	print(str);
+	vector<string> words{ "Hello", "Goodbye" };
+
+	//TODO REQUIRED Print original words with a range-based for loop.
+	//Access each string by-reference and make it constant.
+	print(words);
 	std::cout << std::endl;
 	std::cout << "-------------------Additional 1----------------------"
 		<< std::endl;

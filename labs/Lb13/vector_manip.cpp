@@ -15,18 +15,10 @@ using std::endl;
 using std::vector; 
 using std::string; 
 
-void generate(vector<string>& str)
-{ 
-	str.resize(2);
-	str[0] = "Hello";
-	str[1] = "Goodbye";
-}
-
-void print(vector<string>& str)
+void print(vector<string>& words)
 {
-	int longth = str.size(); 
-	for (int i = 0; i < longth; i++)
+	for (auto n : words)
 	{
-		cout << str[i] << " ";
+		cout << n << " ";
 	}
 }

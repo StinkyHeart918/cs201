@@ -15,8 +15,6 @@
 using std::vector;
 using std::string; 
 
-void generate(vector<string>& str);
-
 void print(vector<string>& str);
 
  /**
