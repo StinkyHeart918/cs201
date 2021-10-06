@@ -7,8 +7,17 @@ William Odom
 
 #include <iostream>
 #include <string>
+#include "substring.hpp"
 
-using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
+
+void outputSub(string& word)
+{
+	cout << "Here's the breakdown of what you entered!:" << endl; 
+	for (int i = word.size(); i > 0; i--)
+	{
+		cout << word.substr(0, i) << endl; 
+	}
+}
