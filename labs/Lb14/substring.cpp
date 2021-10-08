@@ -19,5 +19,6 @@ void outputSub(string& word)
 	for (int i = word.size(); i > 0; i--)
 	{
 		cout << word.substr(0, i) << endl; 
+		//Set up if I was going to do additional parts since I'd need to come in from ends
 	}
 }

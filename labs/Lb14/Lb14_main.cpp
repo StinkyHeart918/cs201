@@ -20,6 +20,5 @@ int main()
 	string word; 
 	cout << "Please enter a word!" << endl; 
 	cin >> word;
-
 	outputSub(word);
 }
