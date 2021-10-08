@@ -13,6 +13,7 @@ William Odom Jr.
 
 using std::cin; 
 using std::cout; 
+using std::endl;
 using std::string; 
 using std::getline; 
 using std::istringstream; 
@@ -43,20 +44,36 @@ unsigned StringToTokensWS(const std::string& input, std::vector<std::string>& to
 	return counter; 
 }
 
+//This by no means works perfectly or in every instance as desired. If an input is reasonable, it should work.
+//Alternatively, if the input is garbage or its first character looks like one thing then it'll
+
 void AnalyzeTokens(std::vector<std::string>& tokens)
 {
-	for (int ii = 0; ii < tokens.size(); ii = ii + 2) //+2 is to skip the whitespaces we put in on purpose
+	for (int ii = 0; ii < tokens.size(); ii = ii + 2) //+2 instead of +1 is to skip the whitespaces we put in on purpose
 	{
-		if()
-		cout << "[Integer] ";
-		if()
-		cout << "[Identifier] ";
-		if()
-		cout << "[String] ";
-		if()
-		cout << "[Whitespace] ";
+		std::vector<string> v = tokens; 
+		istringstream instream(tokens[ii]);
+		char character = 32;
+		int num = -1000; 
+		instream >> character;
+		if (64 < character && character < 91)
+			cout << "[Identifier]" << "\t";
+		else if (96 < character && character < 123)
+			cout << "[Identifier]" << "\t"; 
+		else if(character == 34)
+			cout << "[String]" << "\t";
+		else if(character == 32)
+			cout << "[Whitespace]" << "\t";
 		else
-			cout << "[Unknown] ";
-		cout <<"\t" << "'" << tokens[ii] << "'"; //Should always end the same way...
+		{
+			istringstream instream(v[ii]);
+			instream >> num;
+			string verifier = std::to_string(num);
+			if (v[ii] == verifier)
+				cout << "[Integer]" << "\t";
+			else
+				cout << "[Unknown]" << "\t";
+		} 
+		cout << "\"" << tokens[ii] << "\"" << endl;
 	}
 }
