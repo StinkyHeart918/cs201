@@ -1,2 +1,3 @@
 ﻿  tokenizer.cpp
+C:\github\cs201\HW4\tokenizer\tokenizer.cpp(40,20): warning C4018: '<': signed/unsigned mismatch
   tokenizer.vcxproj -> C:\github\cs201\HW4\tokenizer\Debug\tokenizer.exe

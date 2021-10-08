@@ -6,11 +6,13 @@ William Odom Jr.
 */
 
 #include <iostream>
+#include <sstream>
 #include <vector>
 #include <string>
 #include "tokenizer.hpp"
 
 using std::cin; 
+using std::string; 
 using std::getline; 
 using std::istringstream; 
 
@@ -26,7 +28,18 @@ bool ReadLine(std::string& str)
 
 unsigned StringToTokensWS(const std::string& input, std::vector<std::string>& tokens)
 {
-	return 0; 
+	int counter = 0; 
+	istringstream instream(input);
+	string checker; 
+	for (int k = 0; k < input.size(); k++)
+	{
+		instream >> checker;
+		tokens.push_back(checker);
+		tokens.push_back("");
+		counter++;
+		k = (k) + checker.size();
+	}
+	return counter; 
 }
 
 void AnalyzeTokens(std::vector<std::string>& tokens)

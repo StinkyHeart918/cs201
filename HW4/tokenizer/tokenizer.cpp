@@ -18,8 +18,28 @@ using std::vector;
 int main()
 {
 	string str; 
-	vector<string> token; 
+	int i = 0; 
+	vector<string> tokens; 
 	cout << "Please enter some text. Once you finish, type 'end', 'END', or 'End' to stop the program: " << endl;
-	ReadLine(str);
-	cout << str;
+	while (i < 1)
+	{
+		if (ReadLine(str))
+			StringToTokensWS(str, tokens);
+		else
+		{
+			tokens.push_back(str); //NOTE THAT IN THE ELSE CASE THIS SHOULD BE BLANK ANYWAY
+			tokens.push_back("");
+		}
+		if (str == "end")
+			i = 1; 
+		if (str == "END")
+			i = 1;
+		if (str == "End")
+			i = 1;
+	}
+	for (int j = 0; j < tokens.size(); j++)
+	{
+		cout << tokens[j] << endl;
+	}
+	//AnalyzeTokens(tokens);
 }
