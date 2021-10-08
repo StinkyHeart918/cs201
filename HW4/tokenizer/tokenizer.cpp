@@ -31,9 +31,10 @@ int main()
 		}
 		else
 		{
-			tokens.push_back(str); //NOTE THAT IN THE ELSE CASE THIS SHOULD BE BLANK ANYWAY
+			tokens.push_back(str); //Note that in the else case str should be blank
 			tokens.push_back("");
 		}
+		//pop_back is here to remove the additional whitespace that is not supposed to be past the end entry
 		if (str == "end")
 		{
 			i = 1;

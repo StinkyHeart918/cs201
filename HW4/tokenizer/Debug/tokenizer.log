@@ -1,4 +1,4 @@
 ﻿  tokenizertest.cpp
 C:\github\cs201\HW4\tokenizer\tokenizertest.cpp(36,20): warning C4018: '<': signed/unsigned mismatch
-C:\github\cs201\HW4\tokenizer\tokenizertest.cpp(49,22): warning C4018: '<': signed/unsigned mismatch
+C:\github\cs201\HW4\tokenizer\tokenizertest.cpp(52,22): warning C4018: '<': signed/unsigned mismatch
   tokenizer.vcxproj -> C:\github\cs201\HW4\tokenizer\Debug\tokenizer.exe
