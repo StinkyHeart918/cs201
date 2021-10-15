@@ -1,0 +1,5 @@
+﻿  Lb15.cpp
+  Lb15Main.cpp
+C:\github\cs201\labs\Lb15\Lb15Main.cpp(23,21): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Lb15.vcxproj -> C:\github\cs201\labs\Lb15\Debug\Lb15.exe
