@@ -1,0 +1,6 @@
+﻿  examMain.cpp
+C:\github\cs201\Exam1\examMain.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
+C:\github\cs201\Exam1\examMain.cpp(37,20): warning C4018: '<': signed/unsigned mismatch
+C:\github\cs201\Exam1\examMain.cpp(81,21): warning C4018: '<': signed/unsigned mismatch
+C:\github\cs201\Exam1\examMain.cpp(127,6): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Exam1.vcxproj -> C:\github\cs201\Exam1\Debug\Exam1.exe
