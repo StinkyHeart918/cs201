@@ -19,17 +19,22 @@ using std::endl;
 #include <sstream>
 using std::ostringstream;
 
-struct Book {
-	string ISBN; 
+struct Book { 
 	string Title; 
 	string Author;
 	int Year;
+	string ISBN;
 	bool Loan;
 };
 
 void List(const vector<Book> & MyBooks)
 {
-
+	ostringstream oss1;
+	oss1 << endl << "Your Books Are: " << endl;
+	for (auto book : MyBooks)
+		oss1 << book.Title << ", " << book.Author << ", " << book.Year << ", " << book.ISBN << endl;
+	oss1 << endl;
+	cout << oss1.str();
 }
 
 bool Loaned(const vector<Book>& MyBooks)
@@ -50,15 +55,14 @@ bool SearchISBN(const vector<Book>& MyBooks)
 int main()
 {
 	vector<Book> MyBooks{
-		{"9009909099-0", "Bobert's Bob", "Bob Bob Bob", 1990, true},
-		{"8009909099-0", "Cobert's Bob", "Cob Bob Bob", 1991, false}
+		{"Bobert's Bob", "Bob Bob Bob", 1990, "9009909099-0", true},
+		{"Cobert's Bob", "Cob Bob Bob", 1991, "8009909099-0", false}
 	};
 	bool working = true; 
 	int input; 
 	int input2;
 	string searchFor = "";
 	int year = 0000; 
-
 
 	cout << "Hello!" << endl;
 	while (working)
@@ -99,7 +103,9 @@ int main()
 		}
 		if (input == 5)
 			working = false; 
-		else
+		if(input < 1)
+			cout << "Oops! That's not a valid input. Please try again. " << endl;
+		if (input > 5)
 			cout << "Oops! That's not a valid input. Please try again. " << endl;
 	}
 }
