@@ -30,26 +30,38 @@ struct Book {
 void List(const vector<Book> & MyBooks)
 {
 	ostringstream oss1;
-	oss1 << endl << "Your Books Are: " << endl;
+	oss1 << endl << "Your loaned books are: " << endl;
 	for (auto book : MyBooks)
 		oss1 << book.Title << ", " << book.Author << ", " << book.Year << ", " << book.ISBN << endl;
 	oss1 << endl;
 	cout << oss1.str();
 }
 
-bool Loaned(const vector<Book>& MyBooks)
+void Loaned(const vector<Book>& MyBooks)
 {
-	return true; 
+	ostringstream ossl; 
+	ossl << endl << "Your loaned books are: " << endl;
+	for (auto book : MyBooks)
+		if (book.Loan)
+			ossl << book.Title << ", " << book.Author << ", " << book.Year << ", " << book.ISBN << endl;
+	ossl << endl;
+	cout << ossl.str();
 }
 
-bool NotLoaned(const vector<Book>& MyBooks)
+void NotLoaned(const vector<Book>& MyBooks)
 {
-	return true; 
+	ostringstream ossnl; 
+	ossnl << endl << "Your not loaned books are: " << endl;
+	for (auto book : MyBooks)
+		if (!book.Loan)
+			ossnl << book.Title << ", " << book.Author << ", " << book.Year << ", " << book.ISBN << endl;
+	ossnl << endl;
+	cout << ossnl.str();
 }
 
-bool SearchISBN(const vector<Book>& MyBooks)
+void SearchISBN(const vector<Book>& MyBooks)
 {
-	return true; 
+	
 }
 
 int main()
