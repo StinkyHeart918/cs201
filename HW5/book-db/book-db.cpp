@@ -62,7 +62,43 @@ void NotLoaned(const vector<Book>& MyBooks)
 
 void SearchStr(const vector<Book>& MyBooks, string target, int type)
 {
-
+	ostringstream osssearch; 
+	for (auto book : MyBooks)
+	{
+		if (type == 1)
+		{
+			if (book.ISBN == target)
+			{
+				osssearch << book.Title << ", " << book.Author << ", " << book.Year << ", " << book.ISBN << endl;
+				osssearch << endl;
+			}
+		}
+		if (type == 2)
+		{
+			if (book.Title == target)
+			{
+				osssearch << book.Title << ", " << book.Author << ", " << book.Year << ", " << book.ISBN << endl;
+				osssearch << endl;
+			}
+		}
+		if (type == 3)
+		{
+			if (book.Author == target)
+			{
+				osssearch << book.Title << ", " << book.Author << ", " << book.Year << ", " << book.ISBN << endl;
+				osssearch << endl;
+			}
+		}
+		if(type == 4)
+		{
+			if (book.Year == target)
+			{
+				osssearch << book.Title << ", " << book.Author << ", " << book.Year << ", " << book.ISBN << endl;
+				osssearch << endl;
+			}
+		}
+	}
+	cout << osssearch.str();
 }
 
 void SearchPrompt(const vector<Book>& MyBooks)
@@ -79,6 +115,7 @@ void SearchPrompt(const vector<Book>& MyBooks)
 		cout << "4: Search by Year" << endl;
 		cout << "5: Go Back" << endl;
 		cin >> input;
+		getline(cin, target); //Why do I need this one here for it to work where I want it too? 
 		if (input > 0 && input < 5)
 		{
 			if (input == 1)
@@ -90,7 +127,7 @@ void SearchPrompt(const vector<Book>& MyBooks)
 			if (input == 4)
 				cout << "What is the year?:" << endl;
 
-			getline(cin, target);//WHY DOESN"T IT GET THE LINE????? IT"S NOT ACTUALLY ALLOWING USER INPUT HERE
+			getline(cin, target);
 			SearchStr(MyBooks, target, input);
 		}
 		if (input == 5)
