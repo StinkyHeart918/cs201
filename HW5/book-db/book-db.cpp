@@ -17,12 +17,13 @@ using std::cout;
 using std::endl;
 
 #include <sstream>
+using std::istringstream; 
 using std::ostringstream;
 
 struct Book { 
 	string Title; 
 	string Author;
-	int Year;
+	string Year;
 	string ISBN;
 	bool Loan;
 };
@@ -59,22 +60,56 @@ void NotLoaned(const vector<Book>& MyBooks)
 	cout << ossnl.str();
 }
 
-void SearchISBN(const vector<Book>& MyBooks)
+void SearchStr(const vector<Book>& MyBooks, string target, int type)
 {
-	
+
+}
+
+void SearchPrompt(const vector<Book>& MyBooks)
+{
+	int input;
+	bool working = true;
+	string target; 
+	while (working)
+	{
+		cout << "How would you like to look for this book?" << endl;
+		cout << "1: Search by ISBN" << endl;
+		cout << "2: Search by Title" << endl;
+		cout << "3: Search by Author" << endl;
+		cout << "4: Search by Year" << endl;
+		cout << "5: Go Back" << endl;
+		cin >> input;
+		if (input > 0 && input < 5)
+		{
+			if (input == 1)
+				cout << "What is the ISBN? Be sure to include dash marks where necessary:" << endl;
+			if (input == 2)
+				cout << "What is the full title?:" << endl;
+			if (input == 3)
+				cout << "What is the author's full name?:" << endl;
+			if (input == 4)
+				cout << "What is the year?:" << endl;
+
+			getline(cin, target);//WHY DOESN"T IT GET THE LINE????? IT"S NOT ACTUALLY ALLOWING USER INPUT HERE
+			SearchStr(MyBooks, target, input);
+		}
+		if (input == 5)
+			working = false;
+		if (input < 1)
+			cout << "Oops! That's not a valid input. Please try again. " << endl;
+		if (input > 5)
+			cout << "Oops! That's not a valid input. Please try again. " << endl;
+	}
 }
 
 int main()
 {
 	vector<Book> MyBooks{
-		{"Bobert's Bob", "Bob Bob Bob", 1990, "9009909099-0", true},
-		{"Cobert's Bob", "Cob Bob Bob", 1991, "8009909099-0", false}
+		{"Bobert's Bob", "Bob Bob Bob", "1990", "9009909099-0", true},
+		{"Cobert's Bob", "Cob Bob Bob", "1991", "8009909099-0", false}
 	};
 	bool working = true; 
 	int input; 
-	int input2;
-	string searchFor = "";
-	int year = 0000; 
 
 	cout << "Hello!" << endl;
 	while (working)
@@ -92,27 +127,8 @@ int main()
 			Loaned(MyBooks);
 		if (input == 3)
 			NotLoaned(MyBooks);
-
 		if (input == 4)
-		{
-			//Handles what method the user wants to search with
-			while (working)
-			{
-				cout << "How would you like to look for this book?" << endl;
-				cout << "1: Search by ISBN" << endl;
-				cout << "2: Search by Title" << endl;
-				cout << "3: Search by Author" << endl;
-				cout << "4: Search by Year" << endl;
-				cout << "5:  Go Back" << endl;
-				cin >> input2; 
-				if (input2 == 1)
-					SearchISBN(MyBooks);
-				if (input2 == 5)
-					break;
-				else 
-					cout << "Oops! That's not a valid input. Please try again. " << endl;
-			}
-		}
+			SearchPrompt(MyBooks);
 		if (input == 5)
 			working = false; 
 		if(input < 1)
