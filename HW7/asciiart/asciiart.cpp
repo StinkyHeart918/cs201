@@ -18,7 +18,7 @@ using std::string;
 #include <vector>
 using std::vector; 
 
-//Universal for our image 
+//Universals for our image 
 int xres, yres, maxval; 
 vector<int> ppm;
 
@@ -103,12 +103,12 @@ int main()
 	string filename = "parrot.ppm";
 	if (!read_ppm(filename))
 	{
-		cout << "Error opening or reading" << filename << endl;
+		cout << "Error opening or reading " << filename << endl;
 		exit(1);
 	}
 	cout << "Successfully opened and read file " << filename << endl; 
 
-	for (int i = 0; i < xres * yres * 3; i++)
+	for (int i = 0; i < xres * yres * 3 - 2; i++)
 	{
 		int y;
 
@@ -116,7 +116,7 @@ int main()
 
 		y = 0.2126 * ppm[i] + 0.7152 * ppm[i+1] + 0.0722 * ppm[i+2];
 		//cout << i << " = " << r << " " << g << " " << b;
-		cout << " -> " << y;
+		//cout << " -> " << y;
 		if (y < 0 || y >255)
 		{
 			cout << "y out of range" << endl;
@@ -124,16 +124,14 @@ int main()
 		}
 
 		//map luminance to an ascii character
-		const char value[] = " .-+*@0#"; //becomes " .-+:^*!/($&@0%#" with final submission for 0-15 index
-		int y2ascii = y / 32;  // divide by 16 for final submission
-		cout << " -> " << y2ascii << endl;
+		const char value[] = " .-+:^*!/($&@0%#"; //becomes " .-+:^*!/($&@0%#" with final submission for 0-15 index
+		int y2ascii = y / 16;  // divide by 16 for final submission
+		//cout << " -> " << y2ascii << endl;
 
 		//take shape
 		cout << value[y2ascii];
 		if (i % xres == xres-1)
 			cout << endl; 
-
 	}
-
 	cout << "Done " << endl;
 }
