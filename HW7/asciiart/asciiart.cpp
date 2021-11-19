@@ -53,12 +53,45 @@ int main()
 		cout << "Error reading file" << endl;
 		exit(3);
 	}
+
+	if (xres < 0)
+	{
+		cout << "Error within file: xres" << endl; 
+		exit(4);
+	}
+	if (yres < 0)
+	{
+		cout << "Error within file: yres" << endl;
+		exit(4);
+	}
+	if (maxval < 0)
+	{
+		cout << "Error within file: Max Value" << endl;
+		exit(4);
+	}
 	cout << "Image size " << xres << "x" << yres << "y" << endl;
 	cout << "Max Value = " << maxval << endl;
 
-
-
 	//read the RGB pixels
+	int r, g, b, y;
+	int pixels2read = xres * yres; //how many do we need in the grid? 
+	for (int i = 0; i < pixels2read; i++)
+	{
+		fin >> r >> g >> b;
+		if (!fin)
+		{
+			cout << "Error reading pixels" << endl;
+			exit(3);
+		}
+		y = 0.2126 * r + 0.7152 * g + 0.0722 * b; 
+		cout << i << " = " << r << " " << g << " " << b;
+		cout << " -> " << y;
+		if (y < 0 || y >255)
+		{
+			cout << "Y out of range" << endl;
+			exit(5);
+		}
+	}
 
 	//convert to grayscale
 
