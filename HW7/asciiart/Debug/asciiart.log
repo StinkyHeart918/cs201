@@ -1,4 +1,4 @@
 ﻿  asciiart.cpp
-C:\github\cs201\HW7\asciiart\asciiart.cpp(79,15): warning C4101: 'y': unreferenced local variable
-C:\github\cs201\HW7\asciiart\asciiart.cpp(117,43): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\github\cs201\HW7\asciiart\asciiart.cpp(80,15): warning C4101: 'y': unreferenced local variable
+C:\github\cs201\HW7\asciiart\asciiart.cpp(118,47): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   asciiart.vcxproj -> C:\github\cs201\HW7\asciiart\Debug\asciiart.exe

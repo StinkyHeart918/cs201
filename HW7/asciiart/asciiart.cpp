@@ -28,6 +28,7 @@ bool read_ppm(string filename)
 	ifstream fin(filename);
 	if (!fin)
 		return false; 
+	cout << "Opened file " << filename << "successfully" << endl;
 
 	//read header
 	string line;
@@ -72,7 +73,7 @@ bool read_ppm(string filename)
 		cout << "Error within file: Max Value" << endl;
 		return false;
 	}
-	cout << "Image size " << xres << "x" << yres << "y" << endl;
+	cout << "Image size " << xres << " x " << yres << " y " << endl;
 	cout << "Max Value = " << maxval << endl;
 
 	//read rgb pixels
@@ -108,13 +109,13 @@ int main()
 	}
 	cout << "Successfully opened and read file " << filename << endl; 
 
-	for (int i = 0; i < xres * yres * 3 - 2; i++)
+	for (int i = 0; i < xres * yres; i++)
 	{
 		int y;
 
 		//map pixel r,g,b values to luminance values
 
-		y = 0.2126 * ppm[i] + 0.7152 * ppm[i+1] + 0.0722 * ppm[i+2];
+		y = 0.2126 * ppm[i*3] + 0.7152 * ppm[i*3+1] + 0.0722 * ppm[i*3+2];
 		//cout << i << " = " << r << " " << g << " " << b;
 		//cout << " -> " << y;
 		if (y < 0 || y >255)

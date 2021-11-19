@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\HW7",
+    "\\HW7\\asciiart"
   ],
-  "SelectedNode": "\\asciiart.sln",
+  "SelectedNode": "\\HW7\\asciiart\\asciiart.cpp",
   "PreviewInSolutionExplorer": false
 }
