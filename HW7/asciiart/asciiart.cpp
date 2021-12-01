@@ -125,7 +125,7 @@ int main()
 		}
 
 		//map luminance to an ascii character
-		const char value[] = " .-+:^*!/($&@0%#"; //becomes " .-+:^*!/($&@0%#" with final submission for 0-15 index
+		const char value[] = " .-+:^*!]($&@0%#"; //becomes " .-+:^*!/($&@0%#" with final submission for 0-15 index
 		int y2ascii = y / 16;  // divide by 16 for final submission
 		//cout << " -> " << y2ascii << endl;
 
