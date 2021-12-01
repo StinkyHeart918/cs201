@@ -42,7 +42,34 @@ bool readFile(const string& filename) {
 	// TODO: If you can read the file,
 	//       While not at the end-of-file
 	//       Print each line of the file.
-
+	ifstream fin(filename);
+	if (!fin) {
+		cout << "Error opening file" << endl;
+		return false;
+	}
+	else
+	{
+		while (fin)
+		{
+			string s1, s2;
+			fin >> s1;
+			getline(fin, s2);
+			if (!fin)
+			{
+				if (fin.eof())
+				{
+					return true;
+				}
+				else
+				{
+					cout << "ERROR REACHING EOF" << endl;
+					return false;
+				}
+			}
+			cout << s1 << endl; 
+		}
+	}
+	
 	cout << filename;  // DUMMY output
 	return false;  // DUMMY return
 
@@ -63,6 +90,34 @@ bool readFile1(const string& filename) {
 	//       Print each line of the file,
 	//         but print ERROR: in front of
 	//         lines with strings.
+	ifstream fin(filename);
+	if (!fin) {
+		cout << "Error opening file" << endl;
+		return false;
+	}
+	else
+	{
+		while (fin)
+		{
+			string s1, s2;
+			fin >> s1;
+			getline(fin, s2);
+			if (!fin)
+			{
+				if (fin.eof())
+				{
+					return true;
+				}
+				else
+				{
+					cout << "ERROR REACHING EOF" << endl;
+					return false;
+				}
+			}
+			cout << s1 << endl;
+		}
+	}
+
 
 	cout << filename;  // DUMMY output
 	return false;  // DUMMY return
