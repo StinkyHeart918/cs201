@@ -5,6 +5,18 @@ Program will first read and count the number of times each word occurs within a 
 Afterwards, the program will calculate the average distance between any given words. 
 */
 
+#include <iostream>
+using std::cout;
+using std::endl;
+
+#include <fstream>
+using std::ifstream;
+
+#include <iomanip>
+using std::setw;
+
+#include <string>
+using std::string;
 
 //Reads the file and confirms that it can close again. 
 void read_file()
@@ -56,5 +68,31 @@ void average_words()
 
 int main()
 {
-
+	string file = "Practice.txt";
+	ifstream fin(file);
+	if (!fin) {
+		cout << "Error opening file" << endl;
+		return false;
+	}
+	else
+	{
+		while (fin)
+		{
+			string s1;
+			fin >> s1;
+			cout << s1 << endl;
+			if (!fin)
+			{
+				if (fin.eof())
+				{
+					return true;
+				}
+				else
+				{
+					cout << "ERROR REACHING EOF" << endl;
+					return false;
+				}
+			}
+		}
+	}
 }
