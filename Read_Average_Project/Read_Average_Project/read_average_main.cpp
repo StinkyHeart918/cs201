@@ -6,6 +6,7 @@ Afterwards, the program will calculate the average distance between any given wo
 */
 
 #include <iostream>
+using std::cin; 
 using std::cout;
 using std::endl;
 using std::pair;
@@ -15,6 +16,9 @@ using std::ifstream;
 
 #include <iomanip>
 using std::setw;
+
+#include <cmath>
+using std::abs;
 
 #include <vector>
 using std::vector; 
@@ -52,16 +56,65 @@ void read_file()
 //or are universal variables. Either works here
 void classify_words()
 {
+	//
+}
 
-
+int searchWord(const vector<pair<string, int>> location, const string word, int t)
+{
+	for (int ii = t; ii < location.size(); ii++)
+	{
+		if (location[ii].first == word)
+			return ii;
+		else
+			return location.size() + 1; 
+	}
 }
 
 //Counts up the number of times a word appears in the file. 
 //Uses an increasingly large struct, which has string for the word,
 //second part for the number of times it has been found, and  
-void count_words()
+bool average_words(const vector<pair<string, int>> location)
 {
+	//Variables and initial prompt
+	string word1; string word2; 
+	int l1; int l2; int total = 0; int n = 0;
+	int over = location.size() + 1; 
+	cout << "Please choose two of the aforementioned words and I will ";
+		cout << "find the average distance between them!" << endl;
+		cout << "OR press enter to end" << endl;
 
+	//User input
+	getline(cin, word1);
+	if (!cin)
+		return 0;
+	if (word1 == "")
+		return false;
+	cin >> word2; 
+	if (word1 == word2)
+	{
+		cout << "Whoops! Those are the same word. " << endl;
+		return true;
+	}
+
+	for (int t = 0; t < location.size(); t++)
+	{
+		l1 = searchWord(location, word1, t);
+		if (l1 != over)
+		{
+			for (int tt = 0; tt < location.size(); tt++)
+			{
+				l2 = searchWord(location, word2, tt);
+				if (l2 != over)
+				{
+					total = total + abs(location[l1].second - location[l2].second);
+					n++; 
+				}
+			}
+		}
+	}
+	cout << "The average distance between " << word1 << " and " << word2;
+	cout << " is " << total / n << " words." << endl;
+	return true; 
 }
 
 //Look at the file and pick out the average distance between a CHOSEN pair of words, 
@@ -69,7 +122,7 @@ void count_words()
 //another part of a struct) and take the average of distance between each. 
 void average_words()
 {
-
+	//
 }
 
 //STEPS: 
@@ -111,19 +164,24 @@ int main()
 			{
 				if (fin.eof())
 				{
-					for (auto k = 0; k < location.size(); k++)
-						cout << "Word: " << location[k].first << " Location: " << location[k].second << endl;
+					//for (auto k = 0; k < location.size(); k++)
+					//	cout << "Word: " << location[k].first << " Location: " << location[k].second << endl;
 
-					for (auto m = 0; m < count.size(); m++)
+					for (auto m = 1; m < count.size(); m++)
 						cout << "Word: " << count[m].first << " Count: " << count[m].second << endl;
+					//Here we add prompt function
+
+					while (average_words(location))
+					{
+						average_words(location);
+					}
 					return true;
 				}
 				else
 				{
 					cout << "ERROR REACHING EOF" << endl;
 					return false;
-				}
-				//Function will be added here... 
+				} 
 			}
 			location.push_back({ next, i });
 			i++;
