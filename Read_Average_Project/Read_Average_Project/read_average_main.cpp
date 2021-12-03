@@ -26,6 +26,17 @@ using std::vector;
 #include <string>
 using std::string;
 
+void printVectorPair(vector<pair<string, int>> vect, const string type)
+{
+	for (auto m = 1; m < vect.size(); m++)
+	{
+		cout << "Word: " << vect[m].first << " ";
+		cout << type << " " << vect[m].second << endl;
+	}
+}
+
+//checks if a chosen word has already been added to the vector. If it has a place, 
+//returns that location in form of i, otherwise return 0 to indicate it needs a place
 int isWordAlreadyAdded(const vector<pair<string, int>> count, const string newWord)
 {
 	for (size_t i = 0; i < count.size(); i++)
@@ -38,13 +49,6 @@ int isWordAlreadyAdded(const vector<pair<string, int>> count, const string newWo
 	return 0;
 }
 
-
-//Reads the file and confirms that it can close again. 
-void read_file()
-{
-
-}
-
 //use vector<pair<string, int>> count and vector<pair<string, int>> location
 //count: checks if the string word is already in count, if so add to the associated number
 //otherwise, which is it's respective int, otherwise add a new entry and give it an int of 1.
@@ -54,9 +58,21 @@ void read_file()
 // 
 //Both functions should be prepared within this function, but are defined as part of a class,
 //or are universal variables. Either works here
-void classify_words()
+void classify_words(vector<pair<string, int>> & location, vector<pair<string, int>> & count, 
+	const string next, int & i)
 {
+	int j = 0; 
+	location.push_back({ next, i });
+	i++;
 
+	j = isWordAlreadyAdded(count, next);
+	if (j != 0)
+	{
+		count[j].second = count[j].second + 1;
+		j = 0;
+	}
+	else
+		count.push_back({ next, 1 });
 }
 
 //Does a simple sequential search, returning either the location within the vector 
@@ -147,30 +163,24 @@ int main()
 	vector<pair<string, int>> count = { {"",0} }; //holds every word once and how many times it's seen
 	string word1; string word2; //For user input
 
-
 	ifstream fin(file);
 
 	if (!fin) {
 		cout << "Error opening file" << endl;
-		return false;
+		return 1;
 	}
 	else
 	{
 		while (fin)
 		{
 			fin >> next;
-			//cout << next << endl;
 
-			//Checks for EOF so it can end program. 
+			//Checks for EOF so it can get to step 3. 
 			if (!fin)
 			{
 				if (fin.eof())
 				{
-					//for (auto k = 0; k < location.size(); k++)
-					//	cout << "Word: " << location[k].first << " Location: " << location[k].second << endl;
-
-					for (auto m = 1; m < count.size(); m++)
-						cout << "Word: " << count[m].first << " Count: " << count[m].second << endl;
+					printVectorPair(count, "count:");
 
 					while(average_words(location))
 					{
@@ -184,17 +194,8 @@ int main()
 					return false;
 				} 
 			}
-			location.push_back({ next, i });
-			i++;
 
-			j = isWordAlreadyAdded(count, next);
-			if (j != 0)
-			{
-				count[j].second = count[j].second + 1;
-				j = 0;
-			}
-			else
-				count.push_back({ next, 1 });
+			classify_words(location, count, next, i);
 		}
 	}
 }

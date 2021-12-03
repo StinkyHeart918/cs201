@@ -1,5 +1,18 @@
-Hello
-Hi
-hello
-Hello
-Hi
+Hi there ! would you like to see something pretty cool ? 
+With this program , I am able to count the number of times a word appears within a given file .
+I've named this txt file practice and have manually given it information to use . 
+
+There are some issues , as you might guess by the way I have used punctuation . I did not want 
+to have issues where it mislabels words with punctuation after them as words who are unique . So 
+the program will now treat each bit of stand alone punctuation as a string to count . Similarly , 
+this program struggles with words who are capitalized versus those who are not , and will call the
+word with caps unique . This is still fairly good .
+
+My program has one more thing I've gotten it to do . 
+After it has counted all words and told the user what they are it will prompt for two words . If 
+these are unique , and both within the file , it will do a sequential search and match up every 
+occurance of word1 to word2 , finding the distance between them and adding this to a total . 
+Once this is done , though slow for larger amounts of text , the program will declare what the 
+average words between these two was . 
+
+What do you think ? 
