@@ -22,18 +22,16 @@ using std::vector;
 #include <string>
 using std::string;
 
-bool isWordAlreadyAdded(vector<pair<string, int>> count, const string newWord)
+int isWordAlreadyAdded(const vector<pair<string, int>> count, const string newWord)
 {
 	for (size_t i = 0; i < count.size(); i++)
 	{
 		if (count[i].first == newWord)
-		{
-			count[i].second = count[i].second + 1; 
-			return true;
+		{	  
+			return i;
 		}
 	}
-	count.push_back({ newWord, 1 });
-	return false;
+	return 0;
 }
 
 
@@ -106,21 +104,18 @@ int main()
 		while (fin)
 		{
 			fin >> next;
-			cout << next << endl;
-
-			//Function will be added here... 
-
-			location.push_back({ next, i });
-			i++;
-
-			isWordAlreadyAdded(count, next);
-
+			//cout << next << endl;
 
 			//Checks for EOF so it can end program. 
 			if (!fin)
 			{
 				if (fin.eof())
 				{
+					for (auto k = 0; k < location.size(); k++)
+						cout << "Word: " << location[k].first << " Location: " << location[k].second << endl;
+
+					for (auto m = 0; m < count.size(); m++)
+						cout << "Word: " << count[m].first << " Count: " << count[m].second << endl;
 					return true;
 				}
 				else
@@ -128,7 +123,19 @@ int main()
 					cout << "ERROR REACHING EOF" << endl;
 					return false;
 				}
+				//Function will be added here... 
 			}
+			location.push_back({ next, i });
+			i++;
+
+			j = isWordAlreadyAdded(count, next);
+			if (j != 0)
+			{
+				count[j].second = count[j].second + 1;
+				j = 0;
+			}
+			else
+				count.push_back({ next, 1 });
 		}
 	}
 }

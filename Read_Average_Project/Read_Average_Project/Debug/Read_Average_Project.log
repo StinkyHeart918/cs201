@@ -1,2 +1,4 @@
 ﻿  read_average_main.cpp
+C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(114,25): warning C4018: '<': signed/unsigned mismatch
+C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(117,25): warning C4018: '<': signed/unsigned mismatch
   Read_Average_Project.vcxproj -> C:\github\cs201\Read_Average_Project\Debug\Read_Average_Project.exe

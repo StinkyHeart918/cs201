@@ -1,4 +1,6 @@
-Hi there! 
-My name is William Odom and my project counts the number times every 
-word occurs in a file. After that my program prompts the user to select two 
-words to compare and find the average distance between. 
+Hello
+hello
+hello
+hello
+Hello
+Hi
