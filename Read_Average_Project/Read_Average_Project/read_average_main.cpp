@@ -30,8 +30,8 @@ void printVectorPair(vector<pair<string, int>> vect, const string type)
 {
 	for (auto m = 1; m < vect.size(); m++)
 	{
-		cout << "Word: " << vect[m].first << " ";
-		cout << type << " " << vect[m].second << endl;
+		cout << type << " " << vect[m].second << " ";
+		cout << "Word: " << vect[m].first << " " << endl;
 	}
 }
 
@@ -42,9 +42,7 @@ int isWordAlreadyAdded(const vector<pair<string, int>> count, const string newWo
 	for (size_t i = 0; i < count.size(); i++)
 	{
 		if (count[i].first == newWord)
-		{	  
 			return i;
-		}
 	}
 	return 0;
 }
@@ -56,8 +54,7 @@ int isWordAlreadyAdded(const vector<pair<string, int>> count, const string newWo
 //location: every single word, repeat or not, gets added to this vector, and the int is it
 //orignal place in the file. 
 // 
-//Both functions should be prepared within this function, but are defined as part of a class,
-//or are universal variables. Either works here
+//Both functions should be filled within this function, but are defined as part of a main
 void classify_words(vector<pair<string, int>> & location, vector<pair<string, int>> & count, 
 	const string next, int & i)
 {
@@ -143,17 +140,6 @@ bool average_words(const vector<pair<string, int>> location)
 	return true; 
 }
 
-//STEPS: 
-//1) Open the file, throw error otherwise
-//2) Establish either a pair or struct or class which holds information on:
-//	 string of the word, number of occurrances, location within the file of occurances 
-//	 This could require two seperate things, ie a pair for the first bit and another 
-//	 pair holding all words and locations represented by its location. 
-//3) Output the number of occurrances for each word in a readable format
-//4) Ask user for two words to compare
-//5) Find distance between each location where word1 and word2 exist. 
-//6) Output the average of these distances, and repeat 4 until user inputs something to end
-
 int main()
 {
 	string file = "Practice.txt"; //my file for this demo
@@ -180,7 +166,8 @@ int main()
 			{
 				if (fin.eof())
 				{
-					printVectorPair(count, "count:");
+					printVectorPair(count, "Count:");
+					//printVectorPair(location, "Location:");
 
 					while(average_words(location))
 					{
@@ -194,8 +181,18 @@ int main()
 					return false;
 				} 
 			}
-
 			classify_words(location, count, next, i);
 		}
 	}
 }
+
+//STEPS: 
+//1) Open the file, throw error otherwise
+//2) Establish either a pair or struct or class which holds information on:
+//	 string of the word, number of occurrances, location within the file of occurances 
+//	 This could require two seperate things, ie a pair for the first bit and another 
+//	 pair holding all words and locations represented by its location. 
+//3) Output the number of occurrances for each word in a readable format
+//4) Ask user for two words to compare
+//5) Find distance between each location where word1 and word2 exist. 
+//6) Output the average of these distances, and repeat 4 until user inputs something to end

@@ -1,9 +1,7 @@
-﻿  read_average.cpp
-  read_average_main.cpp
+﻿  read_average_main.cpp
 C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(31,21): warning C4018: '<': signed/unsigned mismatch
-C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(83,22): warning C4018: '<': signed/unsigned mismatch
-C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(116,20): warning C4018: '<': signed/unsigned mismatch
-C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(121,24): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(90): warning C4715: 'searchWord': not all control paths return a value
+C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(80,22): warning C4018: '<': signed/unsigned mismatch
+C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(113,20): warning C4018: '<': signed/unsigned mismatch
+C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(118,24): warning C4018: '<': signed/unsigned mismatch
+C:\github\cs201\Read_Average_Project\Read_Average_Project\read_average_main.cpp(87): warning C4715: 'searchWord': not all control paths return a value
   Read_Average_Project.vcxproj -> C:\github\cs201\Read_Average_Project\Debug\Read_Average_Project.exe

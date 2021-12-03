@@ -18,13 +18,5 @@
     <ClCompile Include="read_average_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="read_average.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="read_average.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
