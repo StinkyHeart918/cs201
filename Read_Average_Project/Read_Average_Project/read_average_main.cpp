@@ -8,6 +8,7 @@ Afterwards, the program will calculate the average distance between any given wo
 #include <iostream>
 using std::cout;
 using std::endl;
+using std::pair;
 
 #include <fstream>
 using std::ifstream;
@@ -15,8 +16,26 @@ using std::ifstream;
 #include <iomanip>
 using std::setw;
 
+#include <vector>
+using std::vector; 
+
 #include <string>
 using std::string;
+
+bool isWordAlreadyAdded(vector<pair<string, int>> count, const string newWord)
+{
+	for (size_t i = 0; i < count.size(); i++)
+	{
+		if (count[i].first == newWord)
+		{
+			count[i].second = count[i].second + 1; 
+			return true;
+		}
+	}
+	count.push_back({ newWord, 1 });
+	return false;
+}
+
 
 //Reads the file and confirms that it can close again. 
 void read_file()
@@ -68,8 +87,16 @@ void average_words()
 
 int main()
 {
-	string file = "Practice.txt";
+	string file = "Practice.txt"; //my file for this demo
+	int i = 1; int j = 0;
+	string next; //For words to be read in from file
+	vector<pair<string, int>> location; //holds every single word and it's relative location
+	vector<pair<string, int>> count = { {"",0} }; //holds every word once and how many times it's seen
+	string word1; string word2; //For user input
+
+
 	ifstream fin(file);
+
 	if (!fin) {
 		cout << "Error opening file" << endl;
 		return false;
@@ -78,9 +105,18 @@ int main()
 	{
 		while (fin)
 		{
-			string s1;
-			fin >> s1;
-			cout << s1 << endl;
+			fin >> next;
+			cout << next << endl;
+
+			//Function will be added here... 
+
+			location.push_back({ next, i });
+			i++;
+
+			isWordAlreadyAdded(count, next);
+
+
+			//Checks for EOF so it can end program. 
 			if (!fin)
 			{
 				if (fin.eof())
